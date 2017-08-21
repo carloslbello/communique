@@ -1,0 +1,32 @@
+# API Endpoints
+
+## HTML API
+
+### Root
+
+- `GET /` - loads React web app
+
+## JSON API
+
+### Users
+
+- `GET /api/users/:id`
+- `POST /api/users`
+- `PATCH /api/users`
+
+### Session
+
+- `POST /api/session`
+- `DELETE /api/session`
+
+### Posts
+
+- `GET /api/posts`
+  - Posts index/search
+  - accepts `tag_name` query param to list posts by tag
+  - accepts `content_query` query param to search by post title and content
+  - accepts pagination params
+- `POST /api/notes`
+- `GET /api/notes/:id`
+- `PATCH /api/notes/:id`
+- `DELETE /api/notes/:id`
