@@ -15,11 +15,11 @@
  */
 
 * {
-  font-family: 'Lato', serif;
+  font-family: 'Lora', serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 #root {
