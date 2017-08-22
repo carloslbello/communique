@@ -21,9 +21,14 @@
     "doc": "docs",
     "test": "test"
   },
+  "engines": {
+    "node": "8.4.0",
+    "yarn": "0.27.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch"
+    "start": "webpack --watch",
+    "postinstall": "webpack"
   },
   "repository": "git+https://github.com/aarzee/communique.git",
   "keywords": [],
