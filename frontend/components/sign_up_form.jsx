@@ -33,19 +33,19 @@ class SignUpForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Email
-            <input type="email" onInput={this.handleInput('email')} value={this.state.email} />
+            <input required type="email" onInput={this.handleInput('email')} value={this.state.email} />
           </label>
           <label>
             Username
-            <input type="text" onInput={this.handleInput('username')} value={this.state.username} />
+            <input required type="text" onInput={this.handleInput('username')} value={this.state.username} />
           </label>
           <label>
             Password
-            <input type="password" onInput={this.handleInput('password')} value={this.state.password} />
+            <input required type="password" onInput={this.handleInput('password')} value={this.state.password} />
           </label>
           <label>
             Confirm Password
-            <input type="password" onInput={this.handleInput('confirm_password')} value={this.state.confirm_password} />
+            <input required type="password" onInput={this.handleInput('confirm_password')} value={this.state.confirm_password} />
           </label>
           <input type="submit" value="Sign Up" />
         </form>

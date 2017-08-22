@@ -31,11 +31,11 @@ class LogInForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Username or Email
-            <input type="text" onInput={this.handleInput('username_or_email')} value={this.state.username_or_email} />
+            <input required type="text" onInput={this.handleInput('username_or_email')} value={this.state.username_or_email} />
           </label>
           <label>
             Password
-            <input type="password" onInput={this.handleInput('password')} value={this.state.password} />
+            <input required type="password" onInput={this.handleInput('password')} value={this.state.password} />
           </label>
           <input type="submit" value="Log In" />
         </form>
