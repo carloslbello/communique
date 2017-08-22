@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .user-credentials-form {
+  margin-top: 50px;
   width: 300px;
   border-radius: 10px;
   border: 2px solid #DDD;
