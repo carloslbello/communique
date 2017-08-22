@@ -17,6 +17,3 @@
 /yarn-error.log
 
 .byebug_history
-
-# Ignore yarn.lock
-yarn.lock
