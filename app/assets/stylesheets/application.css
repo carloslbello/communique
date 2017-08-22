@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: 'Lato', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-credentials-form {
+  width: 300px;
+  border-radius: 10px;
+  border: 2px solid #DDD;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-credentials-form form, .user-credentials-form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-credentials-form h2 {
+  align-self: center;
+}
+
+.user-credentials-form * {
+  margin: 5px;
+}
+
+.user-credentials-form input {
+  break-before: always;
+  margin: 0;
+  margin-top: 2px;
+  padding: 3px;
+  width: auto;
+}
+
+.user-credentials-form input[type=submit] {
+  width: auto;
+  align-self: center;
+}
+
+/*.user-credentials-form input:before {
+  content: "\A";
+  white-space: pre;
+}*/
