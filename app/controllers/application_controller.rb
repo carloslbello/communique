@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  def ensure_logged_in
+    render json: { errors: ['Not logged in'] }, status: 404 unless logged_in?
+  end
 end
