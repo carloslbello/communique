@@ -16,7 +16,7 @@ export const createUser = user => dispatch => {
         dispatch(receiveUser(resultUser));
         dispatch(SessionActions.logInUser(resultUser.id));
       },
-      errorResponse => dispatch(receiveErrors(errorResponse.errors))
+      errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     );
 };
 
@@ -27,7 +27,7 @@ export const logInUser = user => dispatch => {
         dispatch(receiveUser(resultUser));
         dispatch(SessionActions.logInUser(resultUser.id));
       },
-      errorResponse => dispatch(receiveErrors(errorResponse.errors))
+      errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     );
 };
 
@@ -35,6 +35,6 @@ export const logOutUser = () => dispatch => {
   return UsersAPIUtil.logOutUser()
     .then(
       () => dispatch(SessionActions.logOutUser()),
-      errorResponse => dispatch(receiveErrors(errorResponse.errors))
+      errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     );
 };

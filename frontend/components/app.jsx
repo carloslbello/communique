@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 import SignUpFormContainer from './sign_up_form_container';
 import LogInFormContainer from './log_in_form_container';
-import Post from './post';
+import NewPostContainer from './new_post_container';
+import PostContainer from './post_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const links = ({ loggedIn }) => {
   return loggedIn ? (
     <p>
-      <Link to="/posts/new">New Post</Link>
+      <Link to="/newpost">New Post</Link>
     </p>
   ) : (
     <p>
@@ -30,7 +31,8 @@ const App = () => {
       <Route path="/" exact component={linksContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
       <AuthRoute path="/login" component={LogInFormContainer} />
-      <ProtectedRoute path="/posts/new" component={Post} />
+      <ProtectedRoute path="/newpost" component={NewPostContainer} />
+      <Route path="/posts/:postId" component={PostContainer} />
     </div>
   );
 };
