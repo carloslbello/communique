@@ -4,7 +4,9 @@ const PostsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_POST:
-      return Object.assign({}, state, { [action.post.id]: action.post });
+      const newPost = action.post;
+      newPost.content = Object.values(action.post.content);
+      return Object.assign({}, state, { [newPost.id]: newPost });
     default:
       return state;
   }

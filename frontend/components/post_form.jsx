@@ -21,9 +21,10 @@ class PostForm extends React.Component {
     });
   }
 
-  handleContentChange(value) {
+  handleContentChange() {
+    // debugger;
     this.setState({
-      content: value
+      content: this.quill.editor.getContents().ops
     });
   }
 
@@ -41,7 +42,8 @@ class PostForm extends React.Component {
           value={this.state.title}
           onInput={this.handleTitleChange} />
         <ReactQuill
-          value={this.state.content}
+          ref={quill => this.quill = quill}
+          defaultValue={this.state.content}
           onChange={this.handleContentChange} />
         <button onClick={this.handleSubmit}>Submit</button>
       </div>
