@@ -33,6 +33,16 @@ h2[contenteditable]:empty::after {
   color: #777;
 }
 
+.errors {
+  width: 300px;
+  background: coral;
+  border: 3px solid crimson;
+}
+
+.errors li {
+  list-style: none;
+}
+
 body {
   max-width: 1000px;
   margin: 0 auto;

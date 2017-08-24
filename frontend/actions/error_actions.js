@@ -9,3 +9,8 @@ export const receiveErrors = errors => ({
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
 });
+
+export const clearErrorsAnd = action => dispatch => {
+  dispatch(clearErrors());
+  return dispatch(action);
+};

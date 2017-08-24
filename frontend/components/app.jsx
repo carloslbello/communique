@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 import HeaderContainer from './header_container';
+import ErrorsContainer from './errors_container';
 import SignUpFormContainer from './sign_up_form_container';
 import LogInFormContainer from './log_in_form_container';
 import NewPostContainer from './new_post_container';
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <div>
       <HeaderContainer />
+      <ErrorsContainer />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
       <AuthRoute path="/login" component={LogInFormContainer} />
       <ProtectedRoute path="/newpost" component={NewPostContainer} />
