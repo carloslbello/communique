@@ -143,7 +143,6 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
   font-size: 1.25em;
 }
 
@@ -153,13 +152,9 @@ header>div {
   align-items: center;
 }
 
-.communique-img {
-  display: inline-block;
-  background: image-url('communique.svg');
-  width: 17px;
-  height: 24px;
-  background-size: contain;
-  margin-right: 5px;
+header a {
+  color: limegreen;
+  text-decoration: none;
 }
 
 .separator::before, .separator::after {

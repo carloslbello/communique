@@ -17,10 +17,9 @@ const Header = ({ loggedIn, currentUser, logOutUser }) => {
       <div>
         {writeStory}
       </div>
-      <div>
-        <div className="communique-img" />
+      <h1>
         Communique
-      </div>
+      </h1>
       {userLinks}
     </header>
   );
