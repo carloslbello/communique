@@ -20,3 +20,10 @@ export const logInUser = user => {
     data: { user }
   });
 };
+
+export const logOutUser = () => {
+  return $.ajax({
+    method: 'DELETE',
+    url: '/api/session'
+  });
+};

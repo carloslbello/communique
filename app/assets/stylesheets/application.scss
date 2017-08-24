@@ -22,10 +22,16 @@ h1, h2, h3, h4, h5, h6, .ql-header [data-value] {
   font-family: 'Lato', sans-serif;
 }
 
-#root {
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#root>div {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .user-credentials-form {
@@ -61,6 +67,34 @@ h1, h2, h3, h4, h5, h6, .ql-header [data-value] {
 .user-credentials-form input[type=submit] {
   width: auto;
   align-self: center;
+}
+
+header {
+  margin: 5px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+header>div {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.communique-img {
+  display: inline-block;
+  background: image-url('communique.svg');
+  width: 17px;
+  height: 24px;
+  background-size: contain;
+  margin-right: 5px;
+}
+
+.separator::before, .separator::after {
+  content: "\00a0"; /* nbsp */
 }
 
 /*.user-credentials-form input:before {

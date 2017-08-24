@@ -6,7 +6,7 @@ import configureStore from './store/store';
 document.addEventListener('DOMContentLoaded', () => {
   const preloadedState = {};
   if (window.currentUser) {
-    preloadedState.users = { [window.currentUser.id]: window.currentUser };
+    preloadedState.entities = { users: { [window.currentUser.id]: window.currentUser } };
     preloadedState.session = { currentUser: window.currentUser.id };
     delete window.currentUser;
   }
