@@ -6,8 +6,8 @@ class PostForm extends React.Component {
     super(props);
 
     this.state = {
-      title: this.props.title,
-      content: this.props.content
+      title: this.props.post.title,
+      content: this.props.post.content
     };
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -17,7 +17,7 @@ class PostForm extends React.Component {
 
   handleTitleChange(e) {
     this.setState({
-      title: e.currentTarget.value
+      title: e.currentTarget.innerHTML
     });
   }
 
@@ -36,10 +36,8 @@ class PostForm extends React.Component {
   render() {
     return (
       <div className="post-form">
-        <input
-          type="text"
-          placeholder="Title"
-          value={this.state.title}
+        <h2
+          contentEditable
           onInput={this.handleTitleChange} />
         <ReactQuill
           ref={quill => this.quill = quill}

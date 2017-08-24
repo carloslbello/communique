@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const mapDispatchToProps = dispatch => ({
   post: {
-    title: '',
+    title: 'Title',
     content: []
   },
   submit: post => dispatch(createPost(post))

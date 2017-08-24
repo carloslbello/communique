@@ -22,6 +22,17 @@ h1, h2, h3, h4, h5, h6, .ql-header [data-value] {
   font-family: 'Lato', sans-serif;
 }
 
+h2[contenteditable] {
+  padding: 3px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+h2[contenteditable]:empty::after {
+  content: "Title";
+  color: #777;
+}
+
 body {
   max-width: 1000px;
   margin: 0 auto;
