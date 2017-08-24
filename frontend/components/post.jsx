@@ -19,11 +19,16 @@ class Post extends React.Component {
     const quill = new Quill(container);
     quill.setContents(post.content);
     const postHTML = quill.container.querySelector('.ql-editor').innerHTML;
-    
+
+    const tagLis = post.tag_names.map(tag_name => <li key={tag_name}>{tag_name}</li>);
+
     return (
       <div className="post">
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={ { __html: postHTML } }/>
+        <ul className="tags">
+          {tagLis}
+        </ul>
       </div>
     )
   }

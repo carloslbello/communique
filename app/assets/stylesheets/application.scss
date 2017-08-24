@@ -14,6 +14,9 @@
  *= require_self
  */
 
+@import "font-awesome";
+
+
 * {
   font-family: 'Lora', serif;
 }
@@ -85,9 +88,14 @@ body {
   width: auto;
 }
 
+
 .user-credentials-form input[type=submit] {
   width: auto;
   align-self: center;
+}
+
+.quill {
+  margin-bottom: 4px;
 }
 
 header {
@@ -116,6 +124,35 @@ header>div {
 
 .separator::before, .separator::after {
   content: "\00a0"; /* nbsp */
+}
+
+.tags {
+  padding: 0;
+  white-space: pre-line;
+}
+
+.tags li {
+  white-space: normal;
+  display: inline-block;
+  padding: 3px;
+  margin: 3px;
+  width: auto;
+  list-style: none;
+  background: #AAA;
+  border-radius: 5px;
+  line-break: strict;
+}
+
+.tags li i {
+  margin-right: 3px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.small {
+  font-size: 0.8em;
 }
 
 /*.user-credentials-form input:before {
