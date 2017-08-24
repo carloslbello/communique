@@ -17,12 +17,12 @@
 @import "font-awesome";
 
 
-* {
-  font-family: 'Lora', serif;
+*, .modal-container h2 {
+  font-family: 'Lato', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, .ql-header [data-value] {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lora', serif;
 }
 
 h2[contenteditable] {
@@ -51,47 +51,87 @@ body {
   margin: 0 auto;
 }
 
+.modal {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  z-index: 15;
+  background: white;
+  box-shadow: 0 4px 14px 0 rgba(0,0,0,0.3);
+  transition: 0.3s all;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  align-items: center;
+  position: absolute;
+}
+
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.modal-container * {
+  margin: 5px;
+}
+
+.modal-container h2 {
+  margin-top: 15px;
+}
+
+.modal-container>:last-child {
+  margin-bottom: 15px;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  font-size: 1em;
+}
+
+button, input[type=submit] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid limegreen;
+  color: limegreen;
+  background: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.modal-container form, .modal-container label {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-small {
+  transform: scale(0.3);
+  transform-origin: bottom;
+}
+
 #root>div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.user-credentials-form {
-  margin-top: 50px;
-  width: 300px;
-  border-radius: 10px;
-  border: 2px solid #DDD;
-  display: flex;
-  flex-direction: column;
-}
-
-.user-credentials-form form, .user-credentials-form label {
-  display: flex;
-  flex-direction: column;
-}
-
-.user-credentials-form h2 {
-  align-self: center;
-}
-
-.user-credentials-form * {
-  margin: 5px;
-}
-
-.user-credentials-form input {
-  break-before: always;
-  margin: 0;
-  margin-top: 2px;
-  padding: 3px;
-  width: auto;
-}
-
-
-.user-credentials-form input[type=submit] {
-  width: auto;
-  align-self: center;
 }
 
 .quill {

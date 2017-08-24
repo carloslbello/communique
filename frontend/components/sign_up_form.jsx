@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './modal';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -28,28 +29,16 @@ class SignUpForm extends React.Component {
 
   render() {
     return (
-      <div className="user-credentials-form">
+      <Modal>
         <h2>Sign Up</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Email
-            <input required type="email" onInput={this.handleInput('email')} value={this.state.email} />
-          </label>
-          <label>
-            Username
-            <input required type="text" onInput={this.handleInput('username')} value={this.state.username} />
-          </label>
-          <label>
-            Password
-            <input required type="password" onInput={this.handleInput('password')} value={this.state.password} />
-          </label>
-          <label>
-            Confirm Password
-            <input required type="password" onInput={this.handleInput('confirm_password')} value={this.state.confirm_password} />
-          </label>
+          <input required type="email" onInput={this.handleInput('email')} value={this.state.email} placeholder="Email"/>
+          <input required type="text" onInput={this.handleInput('username')} value={this.state.username} placeholder="Username" />
+          <input required type="password" onInput={this.handleInput('password')} value={this.state.password} placeholder="Password"/>
+          <input required type="password" onInput={this.handleInput('confirm_password')} value={this.state.confirm_password} placeholder="Confirm Password"/>
           <input type="submit" value="Sign Up" />
         </form>
-      </div>
+      </Modal>
     );
   }
 }

@@ -58,7 +58,7 @@ class PostForm extends React.Component {
   render() {
     const tagLis = this.state.tagNames.map(tagName =>
       <li key={tagName}>
-        <i className="fa fa-times pointer" onClick={this.removeTag(tagName)} />
+        <i className="fa fa-close pointer" onClick={this.removeTag(tagName)} />
         {tagName}
       </li>
     );

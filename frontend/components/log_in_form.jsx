@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './modal';
 
 class LogInForm extends React.Component {
   constructor(props) {
@@ -26,20 +27,14 @@ class LogInForm extends React.Component {
 
   render() {
     return (
-      <div className="user-credentials-form">
+      <Modal>
         <h2>Log In</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Username or Email
-            <input required type="text" onInput={this.handleInput('username_or_email')} value={this.state.username_or_email} />
-          </label>
-          <label>
-            Password
-            <input required type="password" onInput={this.handleInput('password')} value={this.state.password} />
-          </label>
+          <input required type="text" onInput={this.handleInput('username_or_email')} value={this.state.username_or_email} placeholder="Username or Email" />
+          <input required type="password" onInput={this.handleInput('password')} value={this.state.password} placeholder="Password" />
           <input type="submit" value="Log In" />
         </form>
-      </div>
+      </Modal>
     );
   }
 }
