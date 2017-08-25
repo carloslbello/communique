@@ -1,7 +1,8 @@
-import { LOGIN_USER, LOGOUT_USER } from '../actions/session_actions';
+import { LOGIN_USER, LOGOUT_USER, START_LOADING, END_LOADING } from '../actions/session_actions';
 
 const defaultState = {
-  currentUser: null
+  currentUser: null,
+  loading: false
 };
 
 const SessionReducer = (state = defaultState, action) => {
@@ -10,7 +11,11 @@ const SessionReducer = (state = defaultState, action) => {
     case LOGIN_USER:
       return Object.assign({}, state, { currentUser: action.userId });
     case LOGOUT_USER:
-      return Object.assign({}, state, { currentUser: null } );
+      return Object.assign({}, state, { currentUser: null });
+    case START_LOADING:
+      return Object.assign({}, state, { loading: true });
+    case END_LOADING:
+      return Object.assign({}, state, { loading: false });
     default:
       return state;
   }

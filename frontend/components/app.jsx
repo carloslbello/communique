@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
+import LoadingContainer from './loading_container';
 import HeaderContainer from './header_container';
 import ErrorsContainer from './errors_container';
 import SignUpFormContainer from './sign_up_form_container';
@@ -12,6 +13,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => {
   return (
     <div>
+      <LoadingContainer />
       <HeaderContainer />
       <ErrorsContainer />
       <AuthRoute path="/signup" component={SignUpFormContainer} />

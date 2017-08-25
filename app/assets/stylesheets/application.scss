@@ -164,6 +164,7 @@ header>h1 {
   text-align: center;
 }
 
+
 header>:last-child {
   right: 0;
 }
@@ -174,6 +175,30 @@ header a {
 
 header>:last-child a {
   color: limegreen;
+}
+
+#loading-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading {
+  background: image-url('loading.svg');
+  z-index: 20;
+  width: 64px;
+  height: 64px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .separator::before, .separator::after {
