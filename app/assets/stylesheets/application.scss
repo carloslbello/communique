@@ -141,8 +141,7 @@ button, input[type=submit] {
 header {
   margin: 5px 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  position: relative;
   font-size: 1.25em;
 }
 
@@ -150,11 +149,31 @@ header>div {
   height: inherit;
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+header>:first-child {
+  left: 0;
+}
+
+header>h1 {
+  height: inherit;
+  text-align: center;
+}
+
+header>:last-child {
+  right: 0;
 }
 
 header a {
-  color: limegreen;
   text-decoration: none;
+}
+
+header>:last-child a {
+  color: limegreen;
 }
 
 .separator::before, .separator::after {
