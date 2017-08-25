@@ -25,7 +25,7 @@ export const logInUser = user => dispatch => {
   return UsersAPIUtil.logInUser(user)
     .then(
       resultUser => {
-        dispatch(clearErrors);
+        dispatch(clearErrors());
         dispatch(receiveUser(resultUser));
         dispatch(SessionActions.logInUser(resultUser.id));
       },
