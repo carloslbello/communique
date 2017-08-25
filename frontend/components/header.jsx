@@ -18,7 +18,7 @@ const Header = ({ loggedIn, currentUser, logOutUser }) => {
         {writeStory}
       </div>
       <h1>
-        Communique
+        <Link to="/">Communique</Link>
       </h1>
       {userLinks}
     </header>

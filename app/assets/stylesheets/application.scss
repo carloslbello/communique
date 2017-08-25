@@ -21,7 +21,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, .ql-header [data-value] {
+h1, h2, h3, h4, h5, h6, .ql-header [data-value], header h1 a {
   font-family: 'Lora', serif;
 }
 
@@ -162,6 +162,10 @@ header>:first-child {
 header>h1 {
   height: inherit;
   text-align: center;
+}
+
+header h1 a {
+  color: black;
 }
 
 
