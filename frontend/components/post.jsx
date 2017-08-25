@@ -1,11 +1,11 @@
 import React from 'react';
-import Delta from 'quill-delta';
 import Quill from 'quill';
+import CommentsContainer from './comments_container';
 
 class Post extends React.Component {
   componentDidMount() {
     if (!this.props.post)
-      this.props.fetchPost(this.props.postId);
+      this.props.fetchPost();
   }
 
   render() {
@@ -25,10 +25,11 @@ class Post extends React.Component {
     return (
       <div className="post">
         <h1>{post.title}</h1>
-        <div dangerouslySetInnerHTML={ { __html: postHTML } }/>
+        <div dangerouslySetInnerHTML={ { __html: postHTML } } />
         <ul className="tags">
           {tagLis}
         </ul>
+        <CommentsContainer postId={this.props.postId} />
       </div>
     )
   }

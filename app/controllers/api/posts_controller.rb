@@ -3,8 +3,7 @@ class Api::PostsController < ApplicationController
   before_action :ensure_logged_in, only: [:create]
 
   def create
-    @post = Post.new(title: params[:post][:title], content: params[:post][:content], tag_names: params[:post][:tag_names] || [])
-    @post.author = current_user
+    @post = Post.new(author: current_user, title: params[:post][:title], content: params[:post][:content], tag_names: params[:post][:tag_names] || [])
     if @post.save
       render :show
     else

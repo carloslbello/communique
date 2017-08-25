@@ -11,6 +11,9 @@ class Post < ApplicationRecord
     through: :taggings,
     source: :tag
 
+  has_many :comments,
+    inverse_of: :post
+
   def tag_names=(tag_names)
     self.tags = tag_names.map do |tag_name|
       Tag.find_or_create_by(name: tag_name)
