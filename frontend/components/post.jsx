@@ -12,6 +12,14 @@ class Post extends React.Component {
     const { post } = this.props;
     if (!post) return null;
 
+    let hero = null;
+
+    if(post.hero_image_url) hero = (
+      <div className="hero-image-container">
+        <img src={post.hero_image_url} />
+      </div>
+    );
+
     // Ugly hack that works: Create an invisible Quill editor,
     // give it the post's contents, and grab its HTML
 
@@ -25,6 +33,7 @@ class Post extends React.Component {
     return (
       <div className="post">
         <h1>{post.title}</h1>
+        {hero}
         <div dangerouslySetInnerHTML={ { __html: postHTML } } />
         <ul className="tags">
           {tagLis}

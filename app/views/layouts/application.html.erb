@@ -8,10 +8,15 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link rel="stylesheet" href="//cdn.quilljs.com/1.2.6/quill.snow.css">
     <%= javascript_include_tag 'application' %>
+    <script src="https://widget.cloudinary.com/global/all.js" charset="utf-8"></script>
     <script>
       <% if logged_in? %>
-        window.currentUser = <%== render partial: 'api/users/user.json', locals: { user: current_user } %>
+        window.currentUser = <%== render partial: 'api/users/user.json', locals: { user: current_user } %>;
       <% end %>
+      window.CLOUDINARY_OPTIONS = {
+        cloud_name: '<%= ENV['CLOUD_NAME'] %>',
+        upload_preset: '<%= ENV['UPLOAD_PRESET'] %>'
+      };
     </script>
   </head>
 

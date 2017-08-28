@@ -3,6 +3,7 @@ class Post < ApplicationRecord
 
   def content=(ops)
     self[:content] = ops
+    return unless ops
     content_text = ''
     ops.values.each do |op|
       content_text = content_text.concat(op['insert'])

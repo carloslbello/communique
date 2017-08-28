@@ -17,6 +17,41 @@
 @import "font-awesome";
 
 
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.dashed-border {
+  box-sizing: border-box;
+  border: 4px dashed #999;
+}
+
+.hero-image-container * {
+  margin: auto;
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+}
+
+.hero-image-container img {
+  max-width: 100%;
+}
+
+.hero-image-container div {
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  border-radius: 5%;
+}
+
+.hero-image-container:hover div {
+  z-index: 5;
+}
+
 *, .modal-container h2, .landing * {
   font-family: 'Lato', sans-serif;
 }
@@ -96,7 +131,7 @@ body {
   margin-bottom: 15px;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], textarea {
   outline: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -104,6 +139,16 @@ input[type=text], input[type=password], input[type=email] {
   border: 0;
   border-bottom: 1px solid rgba(0,0,0,.15);
   font-size: 1em;
+  resize: none;
+}
+
+.post-form, .post {
+  width: 100%;
+  max-width: 700px;
+}
+
+.post-form textarea {
+  width: 100%;
 }
 
 button, input[type=submit] {
