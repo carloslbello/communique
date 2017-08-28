@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
-import HeroImageUpload from './hero_image_upload';
 
 class PostForm extends React.Component {
   constructor(props) {
