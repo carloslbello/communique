@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
+import { modules, formats } from '../util/image_react_quill';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -100,6 +101,8 @@ class PostForm extends React.Component {
           onInput={this.handleInput('summary')}
           value={this.state.summary} />
         <ReactQuill
+          modules={modules}
+          formats={formats}
           ref={quill => this.quill = quill}
           onChange={this.handleContentChange} />
         <form onSubmit={this.addTag}>

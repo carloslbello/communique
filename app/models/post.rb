@@ -6,7 +6,9 @@ class Post < ApplicationRecord
     return unless ops
     content_text = ''
     ops.values.each do |op|
-      content_text = content_text.concat(op['insert'])
+      if op['insert'].is_a?(String)
+        content_text = content_text.concat(op['insert'])
+      end
     end
     self.content_text = content_text
   end

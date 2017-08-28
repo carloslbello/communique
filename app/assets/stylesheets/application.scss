@@ -147,6 +147,10 @@ input[type=text], input[type=password], input[type=email], textarea {
   max-width: 700px;
 }
 
+img:before {
+  content: "\A";
+}
+
 .post-form textarea {
   width: 100%;
 }
