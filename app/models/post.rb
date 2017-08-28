@@ -13,8 +13,8 @@ class Post < ApplicationRecord
     self.content_text = content_text
   end
 
-  def summary
-    self[:summary] || self[:content_text][0...self[:content_text].index("\n") || -1]
+  def shown_summary
+    self.summary || self[:content_text][0...self[:content_text].index("\n") || -1]
   end
 
   belongs_to :author,

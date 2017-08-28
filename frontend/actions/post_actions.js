@@ -16,7 +16,7 @@ export const fetchPost = postId => dispatch => {
       post => dispatch(clearErrorsAnd(receivePost(post))),
       errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     ).always(() => dispatch(endLoading()));
-}
+};
 
 export const createPost = post => dispatch => {
   dispatch(startLoading());
@@ -25,4 +25,13 @@ export const createPost = post => dispatch => {
       post => dispatch(clearErrorsAnd(receivePost(post))),
       errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     ).always(() => dispatch(endLoading()));
-}
+};
+
+export const editPost = (postId, post) => dispatch => {
+  dispatch(startLoading());
+  return PostsAPIUtil.editPost(postId, post)
+    .then(
+      post => dispatch(clearErrorsAnd(receivePost(post))),
+      errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
+    ).always(() => dispatch(endLoading()));
+};

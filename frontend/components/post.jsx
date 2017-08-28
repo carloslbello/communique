@@ -1,5 +1,6 @@
 import React from 'react';
 import Quill from 'quill';
+import { Link } from 'react-router-dom';
 import CommentsContainer from './comments_container';
 
 class Post extends React.Component {
@@ -20,6 +21,9 @@ class Post extends React.Component {
       </div>
     );
 
+    let edit = null;
+
+    if(this.props.currentUserIsAuthor) edit = <Link to={`/posts/${post.id}/edit`}>Edit</Link>;
     // Ugly hack that works: Create an invisible Quill editor,
     // give it the post's contents, and grab its HTML
 
@@ -30,6 +34,7 @@ class Post extends React.Component {
 
     const tagLis = post.tag_names.map(tag_name => <li key={tag_name}>{tag_name}</li>);
 
+
     return (
       <div className="post">
         <h1>{post.title}</h1>
@@ -38,6 +43,7 @@ class Post extends React.Component {
         <ul className="tags">
           {tagLis}
         </ul>
+        {edit}
         <CommentsContainer postId={this.props.postId} />
       </div>
     )

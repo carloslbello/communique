@@ -6,7 +6,8 @@ import Post from './post';
 
 const mapStateToProps = (state, ownProps) => ({
   post: state.entities.posts[ownProps.match.params.postId],
-  postId: ownProps.match.params.postId
+  postId: ownProps.match.params.postId,
+  currentUserIsAuthor: state.entities.posts[ownProps.match.params.postId] && state.entities.posts[ownProps.match.params.postId].author_id === state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

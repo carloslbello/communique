@@ -8,9 +8,19 @@ export const fetchPost = postId => {
 export const createPost = post => {
   return $.ajax({
     method: 'POST',
-    url: `/api/posts`,
+    url: '/api/posts',
     data: {
       post
     }
-  })
+  });
+};
+
+export const editPost = (postId, post) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/posts/${postId}`,
+    data: {
+      post
+    }
+  });
 };

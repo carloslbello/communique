@@ -24,6 +24,12 @@ class PostForm extends React.Component {
     this.removeTag = this.removeTag.bind(this);
   }
 
+  componentDidMount() {
+    this.titleHeader.innerHTML = this.state.title;
+    if(this.state.heroImageUrl) this.heroImg.src = this.state.heroImageUrl;
+    this.quill.editor.setContents(this.state.content);
+  }
+
   handleChange(key) {
     return e => {
       this.setState({
@@ -67,7 +73,6 @@ class PostForm extends React.Component {
   }
 
   addTag(e) {
-    debugger;
     e.preventDefault();
     if (!this.state.tagNames.includes(this.state.currentTag))
       this.setState({ tagNames: this.state.tagNames.concat(this.state.currentTag), currentTag: '' });
@@ -90,7 +95,8 @@ class PostForm extends React.Component {
       <div className="post-form">
         <h2
           contentEditable
-          onInput={this.handleChange('title')} />
+          onInput={this.handleChange('title')}
+          ref={titleHeader => this.titleHeader = titleHeader} />
         <div className={this.state.heroImageUrl ? "hero-image-container pointer" : "hero-image-container pointer dashed-border"} onClick={this.upload}>
           <div>Click here to upload an image</div>
           <img ref={heroImg => this.heroImg = heroImg} />
