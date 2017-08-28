@@ -17,7 +17,7 @@
 @import "font-awesome";
 
 
-*, .modal-container h2 {
+*, .modal-container h2, .landing * {
   font-family: 'Lato', sans-serif;
 }
 
@@ -179,6 +179,22 @@ header a {
 
 header>:last-child a {
   color: limegreen;
+}
+
+.landing {
+  text-align: center;
+}
+
+.landing p {
+  font-size: 1.5em;
+}
+
+.communique-img-large {
+  background: image-url('communique.svg') no-repeat;
+  background-size: contain;
+  margin: 20px auto;
+  width: 70px;
+  height: 100px;
 }
 
 #loading-container {
