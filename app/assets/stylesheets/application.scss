@@ -60,13 +60,13 @@ h1, h2, h3, h4, h5, h6, .ql-header [data-value], header h1 a {
   font-family: 'Lora', serif;
 }
 
-h2[contenteditable] {
+h1[contenteditable] {
   padding: 3px;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
-h2[contenteditable]:empty::after {
+h1[contenteditable]:empty::after {
   content: "Title";
   color: #777;
 }

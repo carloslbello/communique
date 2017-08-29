@@ -86,7 +86,7 @@ class PostForm extends React.Component {
     );
     return (
       <div className="post-form">
-        <h2
+        <h1
           contentEditable
           onInput={this.handleChange('title')}
           ref={titleHeader => this.titleHeader = titleHeader} />
