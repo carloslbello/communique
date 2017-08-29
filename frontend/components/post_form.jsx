@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
+import { upload } from '../util/cloudinary_util';
 import { modules, formats } from '../util/image_react_quill';
 
 class PostForm extends React.Component {
@@ -52,8 +53,7 @@ class PostForm extends React.Component {
   }
 
   upload() {
-    cloudinary.openUploadWidget(
-      CLOUDINARY_OPTIONS,
+    upload(
       (error, results) => {
         if(error) return;
         const { url } = results[0];
@@ -62,7 +62,7 @@ class PostForm extends React.Component {
         });
         this.heroImg.src = url;
       }
-    )
+    );
   }
 
   addTag(e) {

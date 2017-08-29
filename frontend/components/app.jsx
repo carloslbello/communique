@@ -10,6 +10,8 @@ import LogInFormContainer from './log_in_form_container';
 import NewPostContainer from './new_post_container';
 import EditPostContainer from './edit_post_container';
 import PostContainer from './post_container';
+import UserPageContainer from './user_page_container';
+import UserFormContainer from './user_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -23,7 +25,9 @@ const App = () => {
       <AuthRoute path="/login" component={LogInFormContainer} />
       <ProtectedRoute path="/newpost" component={NewPostContainer} />
       <Route exact path="/posts/:postId" component={PostContainer} />
-      <Route exact path="/posts/:postId/edit" component={EditPostContainer} />
+      <ProtectedRoute exact path="/posts/:postId/edit" component={EditPostContainer} />
+      <Route exact path="/users/:userId" component={UserPageContainer} />
+      <ProtectedRoute exact path="/users/:userId/edit" component={UserFormContainer} />
     </div>
   );
 };

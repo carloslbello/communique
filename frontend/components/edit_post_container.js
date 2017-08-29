@@ -20,9 +20,9 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   request: () => dispatch(fetchPost(ownProps.match.params.postId)),
-  mappedDispatch: {
+  mappedDispatch: Object.assign({
     submit: post => dispatch(editPost(ownProps.match.params.postId, post))
-  }
+  }, ownProps)
 });
 
 export default withRouter(connect(

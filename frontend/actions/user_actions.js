@@ -44,3 +44,27 @@ export const logOutUser = () => dispatch => {
       errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     ).always(() => dispatch(endLoading()));
 };
+
+export const fetchUser = userId => dispatch => {
+  dispatch(startLoading());
+  return UsersAPIUtil.fetchUser(userId)
+    .then(
+      resultUser => {
+        dispatch(clearErrors());
+        dispatch(receiveUser(resultUser));
+      },
+      errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
+    ).always(() => dispatch(endLoading()));
+}
+
+export const updateUser = (userId, user) => dispatch => {
+  dispatch(startLoading());
+  return UsersAPIUtil.updateUser(userId, user)
+    .then(
+      resultUser => {
+        dispatch(clearErrors());
+        dispatch(receiveUser(resultUser));
+      },
+      errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
+    ).always(() => dispatch(endLoading()));
+};

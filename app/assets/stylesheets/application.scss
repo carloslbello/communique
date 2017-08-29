@@ -16,6 +16,32 @@
 
 @import "font-awesome";
 
+.user-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.user-avatar-container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.user-avatar-container.user-avatar-container-large {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+}
+
+.user-avatar-container img[src] {
+  background-image: none;
+}
 
 .hero-image-container {
   position: relative;
@@ -24,22 +50,32 @@
   overflow: hidden;
 }
 
-.dashed-border {
+div.dashed-border {
   box-sizing: border-box;
   border: 4px dashed #999;
 }
 
-.hero-image-container * {
+p.dashed-border {
+  box-sizing: border-box;
+  border: 1px dashed #999;
+}
+
+.bio-not-written {
+  color: #888;
+  font-style: italic;
+}
+
+.hero-image-container *, .user-avatar-container * {
   margin: auto;
   position: absolute;
   left: 0; right: 0; top: 0; bottom: 0;
 }
 
-.hero-image-container img {
+.hero-image-container img, .user-avatar-container img {
   max-width: 100%;
 }
 
-.hero-image-container div {
+.hero-image-container div, .user-avatar-container div {
   display: inline-block;
   width: fit-content;
   height: fit-content;
@@ -48,11 +84,11 @@
   border-radius: 5%;
 }
 
-.hero-image-container:hover div {
+.hero-image-container:hover div, .user-avatar-container:hover div {
   z-index: 5;
 }
 
-*, .modal-container h2, .landing * {
+*, .modal-container h2, .landing *, .user-page h1 {
   font-family: 'Lato', sans-serif;
 }
 
@@ -68,6 +104,15 @@ h1[contenteditable] {
 
 h1[contenteditable]:empty::after {
   content: "Title";
+  color: #777;
+}
+
+.user-page p {
+  width: 50%;
+}
+
+.user-page p[contenteditable]:empty::after {
+  content: "Tell the world about yourself.";
   color: #777;
 }
 
