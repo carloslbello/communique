@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  request: () => dispatch(fetchCommentsForPostId(ownProps.match.params.postId)).then(dispatch(fetchPost(ownProps.match.params.postId))),
+  request: () => dispatch(fetchPost(ownProps.match.params.postId)),
   mappedDispatch: {}
 });
 

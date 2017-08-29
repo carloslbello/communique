@@ -32,7 +32,7 @@ class CommentForm extends React.Component {
   render() {
     return (
       <div className="comment-form">
-        <h4>Add a comment</h4>
+        <b>Add a comment</b>
         <ReactQuill
           ref={quill => this.quill = quill}
           onChange={this.handleContentChange} />

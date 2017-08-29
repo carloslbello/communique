@@ -60,7 +60,7 @@ p.dashed-border {
   border: 1px dashed #999;
 }
 
-.bio-not-written {
+.faded {
   color: #888;
   font-style: italic;
 }
@@ -122,7 +122,20 @@ h1[contenteditable]:empty::after {
   border: 3px solid crimson;
 }
 
-.errors li {
+.comments {
+  padding: 5px 0;
+}
+
+.comments ul {
+  padding: 0;
+}
+
+.comment-form b {
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.errors li, .comments li {
   list-style: none;
 }
 

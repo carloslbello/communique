@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const UserPage = ({ user, isCurrentUser }) => {
   let edit = null;
   if (isCurrentUser) edit = <Link to={`/users/${user.id}/edit`}>Edit your profile</Link>
-  let bio = <p className="bio-not-written">This user hasn't written anything for their bio yet</p>;
+  let bio = <p className="faded">This user hasn't written anything for their bio yet</p>;
   if (user.bio) bio = <p>{user.bio}</p>;
   return (
     <div className="user-page">

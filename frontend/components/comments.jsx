@@ -1,5 +1,6 @@
 import React from 'react';
 import Quill from 'quill';
+import { ReadableDate } from '../util/date_util';
 import CommentForm from './comment_form';
 
 const Comments = ({ postId, comments, submit }) => {
@@ -7,13 +8,19 @@ const Comments = ({ postId, comments, submit }) => {
   const quill = new Quill(container);
   const commentContents = comments.map(comment => {
     quill.setContents(comment.content);
-    return <div key={comment.id} dangerouslySetInnerHTML={ { __html: quill.container.querySelector('.ql-editor').innerHTML } } />;
+    return (
+      <li key={comment.id}>
+        <b>On { ReadableDate(comment.created_at) }, { comment.author_username } commented:</b>
+        <br />
+        <div dangerouslySetInnerHTML={ { __html: quill.container.querySelector('.ql-editor').innerHTML } } />
+      </li>
+    );
   });
-
+  debugger;
   return (
     <div className="comments">
-      <h4>Comments</h4>
-      {commentContents.length === 0 ? "No comments yet." : commentContents}
+      <b>Comments</b>
+      {commentContents.length === 0 ? <p className="faded">"No comments yet."</p> : <ul>{commentContents}</ul> }
       <CommentForm postId={postId} submit={submit} />
     </div>
   )
