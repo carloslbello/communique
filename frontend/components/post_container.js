@@ -2,16 +2,25 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchPost } from '../actions/post_actions';
 import { fetchCommentsForPostId } from '../actions/comment_actions';
+import RequiredLoadConnect from '../util/required_load_connect';
 import Post from './post';
 
 const mapStateToProps = (state, ownProps) => ({
-  post: state.entities.posts[ownProps.match.params.postId],
-  postId: ownProps.match.params.postId,
-  currentUserIsAuthor: state.entities.posts[ownProps.match.params.postId] && state.entities.posts[ownProps.match.params.postId].author_id === state.session.currentUser
+  component: Post,
+  resource: state.entities.posts[ownProps.match.params.postId],
+  mappedState: resource => ({
+    post: resource,
+    postId: ownProps.match.params.postId,
+    currentUserIsAuthor: resource.author_id === state.session.currentUser
+  })
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchPost: () => { dispatch(fetchCommentsForPostId(ownProps.match.params.postId)).then(dispatch(fetchPost(ownProps.match.params.postId))); },
+  request: () => dispatch(fetchCommentsForPostId(ownProps.match.params.postId)).then(dispatch(fetchPost(ownProps.match.params.postId))),
+  mappedDispatch: {}
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Post));
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RequiredLoadConnect));

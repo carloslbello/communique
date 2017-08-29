@@ -6,14 +6,7 @@ class PostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: this.props.post.title,
-      summary: this.props.post.summary,
-      content: this.props.post.content,
-      tagNames: this.props.post.tagNames,
-      heroImageUrl: this.props.post.heroImageUrl,
-      currentTag: ''
-    };
+    this.state = Object.assign({}, this.props.post, { currentTag: '' });
 
     this.handleContentChange = this.handleContentChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
