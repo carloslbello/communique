@@ -1,6 +1,7 @@
 import React from 'react';
 import Quill from 'quill';
 import { Link } from 'react-router-dom';
+import AuthorInfoContainer from './author_info_container';
 import CommentsContainer from './comments_container';
 
 const Post = ({ post, postId, currentUserIsAuthor }) => {
@@ -27,9 +28,9 @@ const Post = ({ post, postId, currentUserIsAuthor }) => {
 
   const tagLis = post.tag_names.map(tag_name => <li key={tag_name}>{tag_name}</li>);
 
-
   return (
     <div className="post">
+      <AuthorInfoContainer userId={post.author_id} postCreatedDate={post.created_at} postEditedDate={post.updated_at} />
       <h1>{post.title}</h1>
       {hero}
       <div dangerouslySetInnerHTML={ { __html: postHTML } } />

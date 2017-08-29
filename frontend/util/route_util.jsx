@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, withRouter } from 'react-router-dom';
+import { Route, Redirect, withRouter, Link } from 'react-router-dom';
 
 const Auth = ({ component: Component, path, loggedIn }) => (
   <Route path={path} render={(props) => (
@@ -29,3 +29,5 @@ const mapStateToProps = state => (
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));
+
+export const UserLink = ({ userId, children }) => <Link className="user-link" to={`/users/${userId}`}>{children}</Link>;

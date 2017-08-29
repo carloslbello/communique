@@ -16,6 +16,44 @@
 
 @import "font-awesome";
 
+.author-info {
+  width: 100%;
+  max-width: 70%;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.author-info .user-avatar-container {
+  margin: 15px;
+}
+
+.author-info .text-info {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.author-info .text-info p {
+  font-size: 0.8em;
+  color: #888;
+  margin: 0;
+  text-overflow: ellipsis;
+}
+
+.author-info .text-info p:first-child {
+  font-size: 1em;
+  color: inherit;
+}
+
+
 .user-page {
   display: flex;
   flex-direction: column;
