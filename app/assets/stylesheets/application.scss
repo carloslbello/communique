@@ -16,6 +16,21 @@
 
 @import "font-awesome";
 
+.follow-button {
+  display: inline-block;
+  width: fit-content;
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+  transition: 0.1s all linear;
+}
+
+.follow-button.followed {
+  background: #555;
+  color: white;
+}
+
 .author-info {
   width: 100%;
   max-width: 70%;
@@ -41,14 +56,15 @@
   justify-content: space-around;
 }
 
-.author-info .text-info p {
+.author-info .text-info span {
   font-size: 0.8em;
   color: #888;
   margin: 0;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.author-info .text-info p:first-child {
+.author-info .text-info span:first-child {
   font-size: 1em;
   color: inherit;
 }

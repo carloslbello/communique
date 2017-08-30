@@ -1,10 +1,11 @@
 import React from 'react';
 import { UserLink } from '../util/route_util';
 import { ReadableDate } from '../util/date_util';
+import FollowButtonContainer from './follow_button_container';
 
 const AuthorInfo = ({ user, postCreatedDate, postEditedDate }) => {
   let bio = null;
-  if (user.bio) bio = <p>{user.bio}</p>;
+  if (user.bio) bio = <span>{user.bio}</span>;
   let dateInfo = `Posted ${ReadableDate(postCreatedDate)}`;
   if (postCreatedDate !== postEditedDate)
     dateInfo += ` \u2022 Edited ${ReadableDate(postEditedDate)}`;
@@ -16,9 +17,9 @@ const AuthorInfo = ({ user, postCreatedDate, postEditedDate }) => {
         </UserLink>
       </div>
       <div className="text-info">
-        <p>By <UserLink userId={user.id}>{user.username}</UserLink></p>
+        <span>By <UserLink userId={user.id}>{user.username}</UserLink> <FollowButtonContainer userId={user.id} /></span>
         {bio}
-        <p>{dateInfo}</p>
+        <span>{dateInfo}</span>
       </div>
     </div>
   )

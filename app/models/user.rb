@@ -8,6 +8,26 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :posts,
+    class_name: :Post,
+    inverse_of: :author
+
+  has_many :followings,
+    class_name: :Follow,
+    inverse_of: :followed
+
+  has_many :followers,
+    through: :followings,
+    source: :follower
+
+  has_many :followeds,
+    class_name: :Follow,
+    inverse_of: :follower
+
+  has_many :followed,
+    through: :followeds,
+    source: :followed
+
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)
   end

@@ -14,8 +14,8 @@ class RequiredLoadConnect extends React.Component {
   }
 
   render() {
-    const { component: Component, resource, request, mappedState, mappedDispatch } = this.props;
-    if(!resource) return null;
+    const { component: Component, resource, request, mappedState, mappedDispatch, required } = this.props;
+    if(required === false || resource === null || resource === undefined) return null;
     return <Component {...mappedState(resource)} {...mappedDispatch} />;
   }
 }

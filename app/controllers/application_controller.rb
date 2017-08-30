@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :login, :logout, :logged_in?
+  helper_method :current_user, :login, :logout, :logged_in?, :user_followed_by_current_user
 
   def current_user
     @current_user ||= User.find_by(session_token: session[:session_token])
@@ -22,5 +22,10 @@ class ApplicationController < ActionController::Base
 
   def ensure_logged_in
     render json: { errors: ['Not logged in'] }, status: 404 unless logged_in?
+  end
+
+  def user_followed_by_current_user(user)
+    return nil unless logged_in?
+    return !!Follow.find_by(follower: current_user, followed: user)
   end
 end

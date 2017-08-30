@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FollowButtonContainer from './follow_button_container';
 
 const UserPage = ({ user, isCurrentUser }) => {
   let edit = null;
@@ -12,6 +13,7 @@ const UserPage = ({ user, isCurrentUser }) => {
         <img src={user.profile_picture_url ? user.profile_picture_url : 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Checkerboard_pattern.svg/500px-Checkerboard_pattern.svg.png'} alt={`${user.username}'s avatar`} />
       </div>
       <h1>{user.username}</h1>
+      <FollowButtonContainer userId={user.id} />
       {bio}
       {edit}
     </div>
