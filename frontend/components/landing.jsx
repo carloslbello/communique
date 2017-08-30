@@ -10,6 +10,9 @@ const Landing = () => {
         <p>Communique is a place for people to speak their mind and be heard.</p>
         <p>Check out some featured posts:</p>
       </div>
+      <div className="posts-info-container">
+        { window.landingPostIds.map(postId => <PostInfoContainer key={postId} postId={postId} />) }
+      </div>
     </div>
   )
 };

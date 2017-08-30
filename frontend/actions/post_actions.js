@@ -35,3 +35,10 @@ export const editPost = (postId, post) => dispatch => {
       errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     ).always(() => dispatch(endLoading()));
 };
+
+export const fetchFeedPostIds = () => dispatch => {
+  dispatch(startLoading());
+  return PostsAPIUtil.fetchFeedPostIds()
+    .error(errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors)))
+    .always(() => dispatch(endLoading()));
+};

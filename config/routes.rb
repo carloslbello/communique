@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, format: { default: :json } do
+    resource :feed, only: [:show]
     resources :users, only: [:create, :show, :update] do
       resource :follow, only: [:create, :destroy]
     end

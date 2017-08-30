@@ -16,6 +16,10 @@
 
 @import "font-awesome";
 
+#root>div>div {
+  width: 100%;
+}
+
 .follow-button {
   display: inline-block;
   width: fit-content;

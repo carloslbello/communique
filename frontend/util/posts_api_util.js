@@ -24,3 +24,10 @@ export const editPost = (postId, post) => {
     }
   });
 };
+
+export const fetchFeedPostIds = () => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/feed'
+  });
+};
