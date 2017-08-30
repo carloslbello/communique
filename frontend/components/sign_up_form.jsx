@@ -38,6 +38,7 @@ class SignUpForm extends React.Component {
           <input required type="password" onInput={this.handleInput('confirm_password')} value={this.state.confirm_password} placeholder="Confirm Password"/>
           <input type="submit" value="Sign Up" />
         </form>
+        <p>Or, <a href="#" onClick={this.props.logInDemoUser}>log in as demo user</a></p>
       </Modal>
     );
   }

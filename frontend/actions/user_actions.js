@@ -36,6 +36,8 @@ export const logInUser = user => dispatch => {
     ).always(() => dispatch(endLoading()));
 };
 
+export const logInDemoUser = () => dispatch => dispatch(logInUser({ username_or_email: 'demo', password: 'cactus' }));
+
 export const logOutUser = () => dispatch => {
   dispatch(startLoading());
   return UsersAPIUtil.logOutUser()

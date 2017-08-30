@@ -34,6 +34,7 @@ class LogInForm extends React.Component {
           <input required type="password" onInput={this.handleInput('password')} value={this.state.password} placeholder="Password" />
           <input type="submit" value="Log In" />
         </form>
+        <p>Or, <a href="#" onClick={this.props.logInDemoUser}>log in as demo user</a></p>
       </Modal>
     );
   }
