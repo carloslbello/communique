@@ -34,6 +34,8 @@ gem 'font-awesome-rails'
 
 gem 'figaro'
 
+gem 'pg_search'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

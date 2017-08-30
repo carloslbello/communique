@@ -12,6 +12,7 @@ import PostContainer from './post_container';
 import UserPageContainer from './user_page_container';
 import UserFormContainer from './user_form_container';
 import LandingOrFeed from './landing_or_feed';
+import Search from './search';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
       <ProtectedRoute exact path="/posts/:postId/edit" component={EditPostContainer} />
       <Route exact path="/users/:userId" component={UserPageContainer} />
       <ProtectedRoute exact path="/users/:userId/edit" component={UserFormContainer} />
+      <Route exact path="/search" component={Search} />
     </div>
   );
 };

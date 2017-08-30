@@ -20,6 +20,22 @@
   width: 100%;
 }
 
+.search-icon {
+  color: black !important;
+  margin-right: 5px;
+}
+
+.search form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search input {
+  width: 50%;
+  text-align: center;
+}
+
 .follow-button {
   display: inline-block;
   width: fit-content;

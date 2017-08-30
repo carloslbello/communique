@@ -31,3 +31,11 @@ export const fetchFeedPostIds = () => {
     url: '/api/feed'
   });
 };
+
+export const searchWithQuery = query => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/search',
+    data: { query }
+  });
+};

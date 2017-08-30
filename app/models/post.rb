@@ -1,5 +1,9 @@
 class Post < ApplicationRecord
+  include PgSearch
+
   validates :author, :title, :content, :content_text, presence: true
+
+  pg_search_scope :search, against: [:title, :content_text, :summary]
 
   def content=(ops)
     self[:content] = ops
