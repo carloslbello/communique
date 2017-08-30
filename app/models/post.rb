@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   end
 
   def shown_summary
-    self.summary || self[:content_text][0...self[:content_text].index("\n") || -1]
+    if !self.summary || self.summary.empty? then self[:content_text][0...self[:content_text].index("\n") || -1] else self.summary end
   end
 
   belongs_to :author,

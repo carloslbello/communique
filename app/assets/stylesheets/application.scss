@@ -26,6 +26,12 @@
   transition: 0.1s all linear;
 }
 
+.posts-info-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .follow-button.followed {
   background: #555;
   color: white;
@@ -40,7 +46,47 @@
   flex-direction: row;
 }
 
-.user-link {
+.post-info {
+  width: 45%;
+  height: 250px;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #AAA;
+}
+
+.post-info p {
+  color: #888;
+}
+
+.post-info-hero-container {
+  width: 35%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.post-info-hero-container div {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+// .post-info-
+
+.author-info-small {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.author-info-small .user-avatar-container {
+  margin: 5px;
+}
+
+.user-link, .post-info a {
   color: inherit;
   text-decoration: none;
 }
@@ -49,19 +95,52 @@
   margin: 15px;
 }
 
-.author-info .text-info {
+.post-info-text {
+  width: 65%;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.post-info-text>*, .post-info-text>:first-child * {
+  margin: 3px 0;
+}
+
+.post-info-text>:last-child {
+  align-self: flex-end;
+}
+
+.author-info .text-info, .author-info-small .text-info {
   margin: 5px 0;
   display: flex;
   flex-direction: column;
+}
+
+.author-info .text-info {
+  justify-content: space-between;
+}
+
+.author-info-small .text-info {
   justify-content: space-around;
 }
 
-.author-info .text-info span {
+.author-info-small .text-info span {
+  color: #888;
+  // margin:
+}
+
+.author-info .text-info span, .author-info-small .text-info span {
   font-size: 0.8em;
   color: #888;
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.author-info-small .text-info span:first-child {
+  color: inherit;
 }
 
 .author-info .text-info span:first-child {
@@ -91,10 +170,6 @@
   width: 200px;
   height: 200px;
   border: 2px solid black;
-}
-
-.user-avatar-container img[src] {
-  background-image: none;
 }
 
 .hero-image-container {
@@ -142,7 +217,7 @@ p.dashed-border {
   z-index: 5;
 }
 
-*, .modal-container h2, .landing *, .user-page h1 {
+*, .modal-container h2, .landing *, .user-page h1, .post-info h2 {
   font-family: 'Lato', sans-serif;
 }
 
@@ -257,10 +332,6 @@ input[type=text], input[type=password], input[type=email], textarea {
 .post-form, .post {
   width: 100%;
   max-width: 700px;
-}
-
-img:before {
-  content: "\A";
 }
 
 .post-form textarea {

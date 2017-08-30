@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_many :posts,
     class_name: :Post,
+    foreign_key: :author_id,
     inverse_of: :author
 
   has_many :followings,
