@@ -20,7 +20,7 @@ const Comments = ({ postId, comments, submit, loggedIn }) => {
   return (
     <div className="comments">
       <b>Comments</b>
-      {commentContents.length === 0 ? <p className="faded">"No comments yet."</p> : <ul>{commentContents}</ul> }
+      {commentContents.length === 0 ? <p className="faded">No comments yet.</p> : <ul>{commentContents}</ul> }
       {loggedIn ? <CommentForm postId={postId} submit={submit} /> : <p>Log in to comment</p>}
     </div>
   )
