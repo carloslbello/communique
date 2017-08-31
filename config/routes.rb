@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update] do
       resource :follow, only: [:create, :destroy]
     end
+    resource :tag, only: [:show]
     resource :session, only: [:create, :destroy]
     resources :posts, only: [:create, :show, :update] do
       resources :comments, only: [:create, :index]

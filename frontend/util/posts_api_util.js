@@ -53,3 +53,11 @@ export const unlikePost = postId => {
     url: `/api/posts/${postId}/like`
   });
 };
+
+export const postsWithTag = name => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/tag',
+    data: { name }
+  });
+};

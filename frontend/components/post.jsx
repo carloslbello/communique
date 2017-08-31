@@ -27,7 +27,7 @@ const Post = ({ post, postId, currentUserIsAuthor }) => {
   quill.setContents(post.content);
   const postHTML = quill.container.querySelector('.ql-editor').innerHTML;
 
-  const tagLis = post.tag_names.map(tag_name => <li key={tag_name}>{tag_name}</li>);
+  const tagLis = post.tag_names.map(tagName => <li key={tagName}><Link to={`/tag/${tagName}`}>{tagName}</Link></li>);
 
   return (
     <div className="post">

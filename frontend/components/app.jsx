@@ -13,6 +13,7 @@ import UserPageContainer from './user_page_container';
 import UserFormContainer from './user_form_container';
 import LandingOrFeed from './landing_or_feed';
 import Search from './search';
+import Tag from './tag';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
       <Route exact path="/users/:userId" component={UserPageContainer} />
       <ProtectedRoute exact path="/users/:userId/edit" component={UserFormContainer} />
       <Route exact path="/search" component={Search} />
+      <Route path="/tag/:tagName" component={Tag} />
     </div>
   );
 };
