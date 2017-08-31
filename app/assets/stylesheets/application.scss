@@ -317,6 +317,8 @@ h1[contenteditable]:empty::after {
 
 .comments li {
   border: 1px solid #AAA;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .comments li>* {
