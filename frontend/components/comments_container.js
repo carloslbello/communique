@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
   postId: ownProps.postId,
   resource: selectCommentsForPostId(state, ownProps.postId),
   mappedState: resource => ({
-    comments: resource
+    comments: resource,
+    loggedIn: !!state.session.currentUser
   })
 });
 

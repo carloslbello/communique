@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
   resource: state.entities.users[ownProps.userId],
   mappedState: resource => ({
     user: resource,
-    postCreatedDate: ownProps.postCreatedDate
+    createdDate: ownProps.createdDate
   })
 });
 

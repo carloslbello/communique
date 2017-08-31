@@ -16,7 +16,7 @@ const PostInfo = ({ post }) => (
           <p>{post.shown_summary}</p>
         </Link>
       </div>
-      <SmallAuthorInfoContainer userId={post.author_id} postCreatedDate={post.created_at} />
+      <SmallAuthorInfoContainer userId={post.author_id} createdDate={post.created_at} />
     </div>
   </div>
 );

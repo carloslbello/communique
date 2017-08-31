@@ -288,6 +288,14 @@ h1[contenteditable]:empty::after {
   list-style: none;
 }
 
+.comments li {
+  border: 1px solid #AAA;
+}
+
+.comments li>* {
+  margin: 5px;
+}
+
 body {
   max-width: 1000px;
   margin: 0 auto;

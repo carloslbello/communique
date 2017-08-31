@@ -2,7 +2,7 @@ import React from 'react';
 import { UserLink } from '../util/route_util';
 import { ReadableDate } from '../util/date_util';
 
-const SmallAuthorInfo = ({ user, postCreatedDate }) => (
+const SmallAuthorInfo = ({ user, createdDate }) => (
   <div className="author-info-small">
     <div className="user-avatar-container">
       <UserLink userId={user.id}>
@@ -11,7 +11,7 @@ const SmallAuthorInfo = ({ user, postCreatedDate }) => (
     </div>
     <div className="text-info">
       <span><UserLink userId={user.id}>{user.username}</UserLink></span>
-      <span>{ReadableDate(postCreatedDate)}</span>
+      <span>{ReadableDate(createdDate)}</span>
     </div>
   </div>
 );
