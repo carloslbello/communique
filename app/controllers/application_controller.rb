@@ -26,11 +26,11 @@ class ApplicationController < ActionController::Base
 
   def user_followed_by_current_user(user)
     return nil unless logged_in?
-    return Follow.find_by(follower: current_user, followed: user).exists?
+    return !!Follow.find_by(follower: current_user, followed: user)
   end
 
   def post_liked_by_current_user(post)
     return nil unless logged_in?
-    return Follow.find_by(post: post, user: current_user).exists?
+    return !!Like.find_by(post: post, user: current_user)
   end
 end

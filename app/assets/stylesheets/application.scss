@@ -46,13 +46,35 @@
   transition: 0.1s all linear;
 }
 
+.like-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 50px;
+  transition: 0.1s all linear;
+}
+
 .posts-info-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.follow-button.followed {
+.likes {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.likes span {
+  margin-left: 5px;
+  color: #666;
+}
+
+.follow-button.followed, .like-button.liked {
   background: #555;
   color: white;
 }

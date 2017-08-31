@@ -1,7 +1,7 @@
 class Api::LikesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
-    if Like.find_by(user: current_user, post: @post).exists?
+    if !!Like.find_by(user: current_user, post: @post)
       render json: { errors: ['You already like this post'] }, status: 422
       return
     end
@@ -10,9 +10,9 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(parmas[:post_id])
+    @post = Post.find(params[:post_id])
     like = Like.find_by(user: current_user, post: @post)
-    unless like.exists?
+    unless like
       render json: { errors: ['You don\'t like this post'] }, status: 422
       return
     end

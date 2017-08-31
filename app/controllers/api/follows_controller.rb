@@ -1,7 +1,7 @@
 class Api::FollowsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
-    if Follow.find_by(follower: current_user, followed: @user).exists?
+    if !!Follow.find_by(follower: current_user, followed: @user)
       render json: { errors: ['You already follow this user'] }, status: 422
       return
     end
@@ -12,8 +12,9 @@ class Api::FollowsController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     follow = Follow.find_by(follower: current_user, followed: @user)
-    if !follow.exists?
+    unless follow
       render json: { errors: ['You don\'t follow this user'] }, status: 422
+      return
     end
     follow.destroy
     render 'api/users/show'
