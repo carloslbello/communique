@@ -461,7 +461,6 @@ header h1 a {
   color: black;
 }
 
-
 header>:last-child {
   right: 0;
 }
@@ -472,6 +471,10 @@ header a {
 
 header>:last-child a {
   color: limegreen;
+}
+
+header>:last-child a.user-link {
+  color: #551AC1;
 }
 
 .landing {
@@ -514,7 +517,7 @@ header>:last-child a {
   display: none !important;
 }
 
-.separator::before, .separator::after {
+.separator::before, .separator::after, header>:last-child a.user-link:before {
   content: "\00a0"; /* nbsp */
 }
 
