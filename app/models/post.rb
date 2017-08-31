@@ -36,6 +36,10 @@ class Post < ApplicationRecord
     inverse_of: :post,
     dependent: :destroy
 
+  has_many :likes,
+    inverse_of: :post,
+    dependent: :destroy
+
   def tag_names=(tag_names)
     self.tags = tag_names.map do |tag_name|
       Tag.find_or_create_by(name: tag_name)
