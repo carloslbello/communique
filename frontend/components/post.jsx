@@ -2,6 +2,7 @@ import React from 'react';
 import Quill from 'quill';
 import { Link } from 'react-router-dom';
 import AuthorInfoContainer from './author_info_container';
+import LikesContainer from './likes_container';
 import CommentsContainer from './comments_container';
 
 const Post = ({ post, postId, currentUserIsAuthor }) => {
@@ -37,6 +38,7 @@ const Post = ({ post, postId, currentUserIsAuthor }) => {
       <ul className="tags">
         {tagLis}
       </ul>
+      <LikesContainer postId={postId} />
       {edit}
       <CommentsContainer postId={postId} />
     </div>

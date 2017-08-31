@@ -51,10 +51,7 @@ export const fetchUser = userId => dispatch => {
   dispatch(startLoading());
   return UsersAPIUtil.fetchUser(userId)
     .then(
-      resultUser => {
-        dispatch(clearErrors());
-        dispatch(receiveUser(resultUser));
-      },
+      resultUser => dispatch(clearErrorsAnd(receiveUser(resultUser))),
       errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     ).always(() => dispatch(endLoading()));
 }
@@ -63,10 +60,7 @@ export const updateUser = (userId, user) => dispatch => {
   dispatch(startLoading());
   return UsersAPIUtil.updateUser(userId, user)
     .then(
-      resultUser => {
-        dispatch(clearErrors());
-        dispatch(receiveUser(resultUser));
-      },
+      resultUser => dispatch(clearErrorsAnd(receiveUser(resultUser))),
       errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     ).always(() => dispatch(endLoading()));
 };
@@ -75,10 +69,7 @@ export const followUser = userId => dispatch => {
   dispatch(startLoading());
   return UsersAPIUtil.followUser(userId)
     .then(
-      resultUser => {
-        dispatch(clearErrors());
-        dispatch(receiveUser(resultUser));
-      },
+      resultUser => dispatch(clearErrorsAnd(receiveUser(resultUser))),
       errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     ).always(() => dispatch(endLoading()));
 };
@@ -87,10 +78,7 @@ export const unfollowUser = userId => dispatch => {
   dispatch(startLoading());
   return UsersAPIUtil.unfollowUser(userId)
     .then(
-      resultUser => {
-        dispatch(clearErrors());
-        dispatch(receiveUser(resultUser));
-      },
+      resultUser => dispatch(clearErrorsAnd(receiveUser(resultUser))),
       errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
     ).always(() => dispatch(endLoading()));
 };

@@ -42,3 +42,21 @@ export const fetchFeedPostIds = () => dispatch => {
     .error(errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors)))
     .always(() => dispatch(endLoading()));
 };
+
+export const likePost = postId => dispatch => {
+  dispatch(startLoading());
+  return PostsAPIUtil.likePost(postId)
+    .then(
+      resultPost => dispatch(clearErrorsAnd(receivePost(resultPost))),
+      errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
+    ).always(() => dispatch(endLoading()));
+};
+
+export const unlikePost = postId => dispatch => {
+  dispatch(startLoading());
+  return PostsAPIUtil.unlikePost(postId)
+    .then(
+      resultPost => dispatch(clearErrorsAnd(receivePost(resultPost))),
+      errorResponse => dispatch(receiveErrors(errorResponse.responseJSON.errors))
+    ).always(() => dispatch(endLoading()));
+};
