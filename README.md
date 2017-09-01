@@ -69,9 +69,6 @@ Posts are created using the Quill.js rich text editing library. Quill uses an in
 Quill has no facility to directly render Delta formatted data into HTML, so in order to achieve this functionality, I create an invisible Quill editor, set its contents, and grab its inner HTML.
 
 ```javascript
-// Ugly hack that works: Create an invisible Quill editor,
-// give it the post's contents, and grab its HTML
-
 const container = document.createElement('div');
 const quill = new Quill(container);
 quill.setContents(post.content);
