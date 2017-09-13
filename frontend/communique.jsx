@@ -4,10 +4,16 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const preloadedState = {};
+  const preloadedState = {
+    session: {
+      landingPostIds: window.landingPostIds,
+      currentUser: null
+    }
+  };
+  delete window.landingPostIds;
   if (window.currentUser) {
     preloadedState.entities = { users: { [window.currentUser.id]: window.currentUser } };
-    preloadedState.session = { currentUser: window.currentUser.id };
+    preloadedState.session.currentUser = window.currentUser.id;
     delete window.currentUser;
   }
   const root = document.getElementById('root');

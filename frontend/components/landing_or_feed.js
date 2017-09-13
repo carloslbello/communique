@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Landing from './landing';
+import LandingContainer from './landing_container';
 import FeedContainer from './feed_container';
 
-const LandingOrFeed = ({ loggedIn }) => loggedIn ? <FeedContainer /> : <Landing />;
+const LandingOrFeed = ({ loggedIn }) => loggedIn ? <FeedContainer /> : <LandingContainer />;
 
 const mapStateToProps = state => ({
   loggedIn: !!state.session.currentUser

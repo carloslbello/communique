@@ -1,7 +1,7 @@
 import React from 'react';
 import PostInfoContainer from './post_info_container';
 
-const Landing = () => {
+const Landing = ({ landingPostIds }) => {
   return (
     <div>
       <div className="landing">
@@ -11,7 +11,7 @@ const Landing = () => {
         <p>Check out some featured posts:</p>
       </div>
       <div className="posts-info-container">
-        { window.landingPostIds.map(postId => <PostInfoContainer key={postId} postId={postId} />) }
+        { landingPostIds.map(postId => <PostInfoContainer key={postId} postId={postId} />) }
       </div>
     </div>
   )
