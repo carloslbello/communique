@@ -4,6 +4,7 @@ import PostInfoContainer from './post_info_container';
 class Feed extends React.Component {
   constructor(props) {
     super(props);
+    this.landingPostIds = props.landingPostIds;
 
     this.state = { postIds: [], fetched: false };
   }
@@ -20,7 +21,7 @@ class Feed extends React.Component {
         <p>Looks like you've got nothing in your feed. You might want to check out these featured posts:</p>
       </div>
     ) : null;
-    const postIds = noPosts ? window.landingPostIds : this.state.postIds;
+    const postIds = noPosts ? this.landingPostIds : this.state.postIds;
     debugger;
     return (
       <div>
