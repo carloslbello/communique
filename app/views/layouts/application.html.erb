@@ -17,8 +17,7 @@
         cloud_name: '<%= ENV['CLOUD_NAME'] %>',
         upload_preset: '<%= ENV['UPLOAD_PRESET'] %>'
       };
-      // window.landingPostIds = < %== User.find_by(username: 'carlosliam').posts.order(created_at: :desc).limit(4).pluck(:id) %>;
-      window.landingPostIds = [];
+      window.landingPostIds = <%== User.find_by(username: 'carlosliam').posts.order(created_at: :desc).limit(4).pluck(:id) %>;
     </script>
   </head>
 
