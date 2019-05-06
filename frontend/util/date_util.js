@@ -15,5 +15,5 @@ const months = [
 
 export const ReadableDate = dateString => {
   const date = new Date(dateString);
-  return `${date.getDate()} ${months[date.getMonth()]}`;
+  return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
 }
