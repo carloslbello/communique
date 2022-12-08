@@ -1,9 +1,5 @@
 # Communique
 
-[Communique live][heroku]
-
-[heroku]: http://communique-cl.herokuapp.com/
-
 Communique is a fullstack web app based on Medium. It uses Ruby on Rails and the PostgreSQL database on the backend and React/Redux on the frontend.
 
 ## Features and Implementation
